@@ -1,16 +1,142 @@
-# React + Vite
+# 🚀 PortGenie — AI-Powered Portfolio Builder for Developers
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PortGenie is a **full-stack AI-assisted web application** that enables developers and students to **create, customize, and publish modern web portfolios** through a guided workflow — without writing design code.
 
-Currently, two official plugins are available:
+Unlike static portfolio generators, PortGenie combines **structured user input + AI-driven layout planning** to produce clean, responsive, web-ready portfolios.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🎯 Why PortGenie?
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Most portfolio tools either:
+- Force rigid templates  
+- Require design skills  
+- Or generate low-quality static pages  
 
-## Expanding the ESLint configuration
+**PortGenie solves this by:**
+- Separating **content**, **design**, and **AI decisions**
+- Giving users full control over data
+- Using AI only where it adds real value
+- Remaining production-safe when AI limits are hit
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project demonstrates **real-world engineering judgment**, not just feature building.
+
+---
+
+## ✨ Core Features
+
+### 🔐 Authentication & User Management
+- Firebase Authentication (Email / Password)
+- Persistent login sessions
+- Editable user profile with instant UI updates
+- Profile photo upload via file picker (local persistence)
+
+---
+
+### 🧠 AI-Assisted Portfolio Planning
+- AI determines:
+  - Layout type
+  - Section ordering
+  - Headline / tagline
+- Smart fallback system when AI quota is exceeded
+- AI never blocks core functionality
+
+---
+
+### 🧱 Portfolio Creation Wizard
+Step-by-step flow to input:
+- Skills
+- Projects (titles only — schema-safe)
+- Experience
+- Education
+- Certificates
+- External links
+
+Each step is validated and stored cleanly.
+
+---
+
+### 👁️ Live Portfolio Preview
+- Mini preview before publishing
+- Real portfolio view after creation
+- Responsive, modern web layout
+- Profile photo + tagline displayed prominently
+
+---
+
+### 🎨 Layout & Theme System
+- Layouts driven by configuration, not hard-coded JSX
+- Theme system supports:
+  - Background color
+  - Text color
+  - Accent color
+- Easy to extend for future themes
+
+---
+
+### 🗑️ Portfolio Management
+- View created portfolios from dashboard
+- Delete portfolios safely
+- Clean MongoDB schema validation
+
+---
+
+## 🏗️ Architecture Overview
+
+Frontend (React + Tailwind)
+│
+├── AuthContext (Firebase Auth + Local Profile State)
+├── Wizard Flow (Steps 1–5)
+├── Portfolio Renderer (Config-driven)
+│
+Backend (Node + Express)
+│
+├── REST APIs
+├── MongoDB (Mongoose)
+├── AI Planner Service
+│
+External Services
+│
+├── Firebase Authentication
+└── OpenAI API (with quota-safe fallback)
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- React (Vite)
+- Tailwind CSS
+- React Router
+- Context API
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+
+### Services
+- Firebase Authentication
+- OpenAI API
+
+---
+
+## 📂 Project Structure
+
+portgenie/
+├── frontend/
+│ ├── components/
+│ ├── pages/
+│ ├── context/
+│ ├── layouts/
+│ └── utils/
+│
+├── backend/
+│ ├── routes/
+│ ├── controllers/
+│ ├── models/
+│ └── services/
+│
+├── .gitignore
+└── README.md
